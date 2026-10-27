@@ -1,12 +1,487 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="id" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benim Kişisel Web Sitem</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portofolio Salma Dwi Yanti, S.Ak. — Accounting Graduate dengan minat pada Finance, Accounting, dan Tax.">
+  <meta name="theme-color" content="#102a56">
+  <title>Salma Dwi Yanti, S.Ak. | Portfolio</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 950: '#09172f', 900: '#102a56', 800: '#173b70', 700: '#214d8a' },
+            gold: { 400: '#e8c76a', 500: '#d7ad3f', 600: '#b98b24' }
+          },
+          boxShadow: {
+            soft: '0 18px 50px rgba(16, 42, 86, .10)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root { color-scheme: light; }
+    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .glass { background: rgba(255,255,255,.82); backdrop-filter: blur(14px); }
+    .hero-grid {
+      background-image: radial-gradient(rgba(33,77,138,.09) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .float { animation: float 5s ease-in-out infinite; }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
-<body>
-    <h1>Merhaba! Web siteme hoş geldiniz.</h1>
-    <p>Bu site GitHub Pages kullanılarak yayınlandı!</p>
+<body class="bg-slate-50 text-slate-700 antialiased">
+  <!-- Navigasi -->
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-slate-200/70 glass">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5 lg:px-8" aria-label="Navigasi utama">
+      <a href="#home" class="font-bold tracking-tight text-navy-900">SDY<span class="text-gold-600">.</span></a>
+      <button id="menu-toggle" class="inline-flex items-center rounded-xl border border-slate-200 px-3 py-2 text-sm font-semibold text-navy-900 md:hidden" aria-expanded="false" aria-controls="nav-links">
+        Menu <span class="ml-2" aria-hidden="true">☰</span>
+      </button>
+      <div id="nav-links" class="absolute left-0 right-0 top-full hidden flex-col gap-1 border-b border-slate-200 bg-white p-4 shadow-lg md:static md:flex md:flex-row md:items-center md:gap-7 md:border-0 md:bg-transparent md:p-0 md:shadow-none">
+        <a class="nav-link rounded-lg px-3 py-2 text-sm font-medium hover:text-navy-700" href="#about">Tentang</a>
+        <a class="nav-link rounded-lg px-3 py-2 text-sm font-medium hover:text-navy-700" href="#experience">Pengalaman</a>
+        <a class="nav-link rounded-lg px-3 py-2 text-sm font-medium hover:text-navy-700" href="#activities">Organisasi</a>
+        <a class="nav-link rounded-lg px-3 py-2 text-sm font-medium hover:text-navy-700" href="#projects">Portofolio</a>
+        <a class="nav-link rounded-lg px-3 py-2 text-sm font-medium hover:text-navy-700" href="#skills">Keahlian</a>
+        <a class="nav-link rounded-lg px-3 py-2 text-sm font-medium hover:text-navy-700" href="#certifications">Sertifikasi</a>
+        <a href="#contact" class="mt-2 rounded-full bg-navy-900 px-5 py-2.5 text-center text-sm font-semibold text-white transition hover:bg-navy-800 md:mt-0">Hubungi Saya</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="hero-grid relative overflow-hidden pt-28 md:pt-36">
+      <div class="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-blue-100/70 blur-3xl"></div>
+      <div class="pointer-events-none absolute -bottom-28 left-0 h-72 w-72 rounded-full bg-amber-100/60 blur-3xl"></div>
+      <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-5 pb-20 pt-8 md:px-8 lg:grid-cols-[1.1fr_.9fr] lg:gap-16 lg:pb-28">
+        <div class="reveal order-2 lg:order-1">
+          <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[.16em] text-navy-800 shadow-sm">
+            <span class="h-2 w-2 rounded-full bg-gold-500"></span> Portfolio Profesional
+          </div>
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[.18em] text-navy-700">Halo, saya</p>
+          <h1 class="max-w-2xl text-4xl font-extrabold leading-tight tracking-tight text-navy-950 sm:text-5xl lg:text-6xl">
+            Salma Dwi Yanti<span class="text-gold-600">, S.Ak.</span>
+          </h1>
+          <p class="mt-5 text-lg font-semibold text-navy-800 sm:text-xl">Accounting Graduate | Finance, Accounting &amp; Tax Enthusiast</p>
+          <p class="mt-5 max-w-2xl text-base leading-8 text-slate-600">
+            Lulusan S1 Akuntansi STIE Nasional Banjarmasin dengan IPK 3,98/4,00. Memiliki pengalaman dalam administrasi operasional, pelayanan pelanggan, pengelolaan dokumen, penagihan, pencatatan penerimaan pembayaran, serta pengolahan dan pemeriksaan data menggunakan Google Spreadsheet. Memiliki Brevet Pajak A dan B, CFTR (Certified Fundamental Tax Reporting), serta pengetahuan dasar Accurate dan Coretax/E-Faktur. Tertarik mengembangkan karier di bidang administrasi, keuangan, akuntansi, dan perpajakan.
+          </p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <a href="#projects" class="inline-flex items-center justify-center rounded-full bg-navy-900 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-900/15 transition hover:-translate-y-0.5 hover:bg-navy-800">Lihat Portofolio <span class="ml-2" aria-hidden="true">↘</span></a>
+            <a href="Salma-Dwi-Yanti-CV.pdf" download class="inline-flex items-center justify-center rounded-full border border-navy-200 bg-white px-6 py-3.5 text-sm font-bold text-navy-900 transition hover:-translate-y-0.5 hover:border-gold-500">Download CV <span class="ml-2" aria-hidden="true">↓</span></a>
+            <a href="#contact" class="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white/70 px-6 py-3.5 text-sm font-bold text-slate-700 transition hover:-translate-y-0.5 hover:border-navy-300">Hubungi Saya</a>
+          </div>
+          <div class="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-500">
+            <span class="inline-flex items-center gap-2"><span class="text-gold-600">✦</span> IPK 3,98</span>
+            <span class="inline-flex items-center gap-2"><span class="text-gold-600">✦</span> Lulusan Terbaik Kedua Prodi Akuntansi</span>
+            <span class="inline-flex items-center gap-2"><span class="text-gold-600">✦</span> Lulus 2026</span>
+          </div>
+        </div>
+        <div class="reveal order-1 mx-auto w-full max-w-md lg:order-2">
+          <div class="relative mx-auto max-w-[370px]">
+            <div class="absolute -inset-4 rotate-3 rounded-[2rem] border-2 border-gold-400/80"></div>
+            <div class="absolute -left-5 top-12 z-10 hidden rounded-2xl border border-white bg-white px-4 py-3 shadow-soft sm:block float">
+              <p class="text-xs font-medium text-slate-500">Fokus karier</p>
+              <p class="mt-1 font-bold text-navy-900">Finance · Accounting · Tax</p>
+            </div>
+            <img src="foto-salma-wisuda.jpg" alt="Salma Dwi Yanti mengenakan toga wisuda" class="relative aspect-[3/4] w-full rounded-[1.75rem] object-cover object-center shadow-2xl shadow-navy-900/20" fetchpriority="high">
+            <div class="absolute -bottom-5 right-4 rounded-2xl border border-white/80 bg-white/95 px-5 py-4 shadow-soft">
+              <p class="text-xs text-slate-500">Pendidikan</p>
+              <p class="font-bold text-navy-900">S1 Akuntansi</p>
+              <p class="text-sm text-slate-600">STIE Nasional Banjarmasin</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="h-1 w-full bg-gradient-to-r from-navy-900 via-gold-400 to-navy-900"></div>
+    </section>
+
+    <!-- Tentang saya -->
+    <section id="about" class="scroll-mt-24 py-20 md:py-24">
+      <div class="mx-auto grid max-w-7xl gap-12 px-5 md:px-8 lg:grid-cols-[.8fr_1.2fr] lg:gap-20">
+        <div class="reveal">
+          <p class="text-sm font-bold uppercase tracking-[.18em] text-gold-600">Tentang Saya</p>
+          <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-navy-950 sm:text-4xl">Membangun karier dengan ketelitian dan kemauan belajar.</h2>
+          <div class="mt-6 h-1 w-20 rounded-full bg-gold-500"></div>
+          <img src="foto-plakat-wisuda.jpg" alt="Plakat penghargaan wisuda Salma Dwi Yanti" loading="lazy" class="mt-8 w-full max-w-sm rounded-2xl border border-slate-200 object-cover shadow-soft">
+        </div>
+        <div class="reveal lg:pt-7">
+          <p class="text-base leading-8 text-slate-600">
+            Saya merupakan lulusan S1 Akuntansi STIE Nasional Banjarmasin tahun 2026. Saya tertarik pada proses administrasi keuangan, pencatatan transaksi, pengolahan data, dan perpajakan. Pengalaman di bidang administrasi perjalanan, penagihan dan keuangan lingkungan, serta data entry membantu saya terbiasa mengelola informasi, memeriksa data, menyusun dokumen, dan menjaga kerapian pencatatan.
+          </p>
+          <p class="mt-4 text-base leading-8 text-slate-600">
+            Saya ingin mengembangkan kemampuan tersebut dalam lingkungan kerja profesional pada bidang Finance, Accounting, atau Tax. Saya siap mempelajari sistem dan prosedur perusahaan, bekerja secara mandiri maupun bersama tim, serta meminta arahan ketika diperlukan agar pekerjaan diselesaikan secara tepat dan bertanggung jawab.
+          </p>
+          <div class="mt-8 grid gap-4 sm:grid-cols-2">
+            <div class="rounded-2xl border border-slate-200 bg-white p-5">
+              <span class="text-2xl text-gold-600" aria-hidden="true">◎</span>
+              <h3 class="mt-3 font-bold text-navy-900">Teliti &amp; Terstruktur</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Memeriksa data, menyusun catatan, dan mengarsipkan bukti pembayaran.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-200 bg-white p-5">
+              <span class="text-2xl text-gold-600" aria-hidden="true">↗</span>
+              <h3 class="mt-3 font-bold text-navy-900">Terus Berkembang</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Terbuka untuk mempelajari aplikasi, sistem, dan prosedur kerja baru.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pendidikan -->
+    <section id="education" class="scroll-mt-24 border-y border-slate-200 bg-white py-20 md:py-24">
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <p class="text-sm font-bold uppercase tracking-[.18em] text-gold-600">Pendidikan</p>
+          <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-navy-950 sm:text-4xl">Landasan akademik</h2>
+          <p class="mt-4 leading-7 text-slate-600">Bekal akademik untuk berkembang dalam administrasi keuangan, akuntansi, dan perpajakan.</p>
+        </div>
+        <div class="reveal mx-auto mt-10 max-w-3xl rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+          <div class="flex flex-col gap-5 sm:flex-row sm:items-start">
+            <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-navy-900 text-2xl text-gold-400" aria-hidden="true">▤</div>
+            <div class="flex-1">
+              <div class="flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
+                <div>
+                  <h3 class="text-xl font-bold text-navy-950">S1 Akuntansi</h3>
+                  <p class="mt-1 font-medium text-navy-700">STIE Nasional Banjarmasin</p>
+                </div>
+                <span class="w-fit rounded-full bg-blue-100 px-3 py-1 text-sm font-semibold text-navy-800">Sep 2022 – Feb 2026</span>
+              </div>
+              <div class="mt-5 flex flex-wrap gap-3">
+                <span class="rounded-xl border border-gold-300 bg-amber-50 px-4 py-2 text-sm font-bold text-navy-900">IPK 3,98</span>
+                <span class="rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700">Lulusan Terbaik Kedua — Prodi Akuntansi</span>
+              </div>
+              <p class="mt-4 text-sm leading-6 text-slate-600">Kegiatan akademik: Lomba Cerdas Cermat Akuntansi yang diselenggarakan OJK (2024) dan Pekan Ilmiah Akuntansi (2025).</p>
+            </div>
+          </div>
+          <div class="mt-6 border-t border-slate-200 pt-5 sm:ml-[4.75rem]">
+            <h3 class="font-bold text-navy-950">SMA Negeri 6 Banjarmasin</h3>
+            <p class="mt-1 text-sm text-slate-600">Jurusan MIPA · Lulus Juli 2022</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pengalaman kerja -->
+    <section id="experience" class="scroll-mt-24 py-20 md:py-24">
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="reveal max-w-2xl">
+          <p class="text-sm font-bold uppercase tracking-[.18em] text-gold-600">Pengalaman</p>
+          <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-navy-950 sm:text-4xl">Pengalaman kerja yang relevan</h2>
+          <p class="mt-4 leading-7 text-slate-600">Pengalaman berikut dirangkum berdasarkan CV dan berfokus pada tugas yang tercantum di dalamnya.</p>
+        </div>
+        <div class="relative mt-10 space-y-6 before:absolute before:bottom-8 before:left-[19px] before:top-8 before:w-px before:bg-slate-200 md:before:left-[23px]">
+          <article class="reveal relative pl-12 md:pl-16">
+            <span class="absolute left-2 top-6 z-10 h-6 w-6 rounded-full border-4 border-slate-50 bg-gold-500 md:left-3"></span>
+            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-soft sm:p-8">
+              <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h3 class="text-lg font-bold text-navy-950">Administrasi</h3>
+                  <p class="mt-1 font-semibold text-navy-700">PT Noorthoibah Tour and Travel — Cabang Banjarmasin</p>
+                </div>
+                <span class="w-fit rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-navy-800">Jul 2025 – Jul 2026</span>
+              </div>
+              <ul class="mt-5 space-y-3 text-sm leading-7 text-slate-600">
+                <li class="flex gap-3"><span class="mt-1 text-gold-600">✓</span><span>Memberikan pelayanan kepada calon jemaah dan mengelola administrasi operasional.</span></li>
+                <li class="flex gap-3"><span class="mt-1 text-gold-600">✓</span><span>Menghitung pembayaran yang diterima serta merekap biaya pengurusan paspor, visa, vaksin, dan kebutuhan administrasi lainnya.</span></li>
+                <li class="flex gap-3"><span class="mt-1 text-gold-600">✓</span><span>Menggunakan Microsoft Office dan printer untuk menyusun, mengelola, serta mencetak dokumen calon jemaah.</span></li>
+                <li class="flex gap-3"><span class="mt-1 text-gold-600">✓</span><span>Mendukung pemasaran melalui pembuatan konten promosi digital dan pembagian brosur.</span></li>
+              </ul>
+            </div>
+          </article>
+          <article class="reveal relative pl-12 md:pl-16">
+            <span class="absolute left-2 top-6 z-10 h-6 w-6 rounded-full border-4 border-slate-50 bg-gold-500 md:left-3"></span>
+            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-soft sm:p-8">
+              <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h3 class="text-lg font-bold text-navy-950">Freelance Staff Penagihan &amp; Keuangan</h3>
+                  <p class="mt-1 font-semibold text-navy-700">Perangkat RT 34</p>
+                </div>
+                <span class="w-fit rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-navy-800">Jan 2021 – Sekarang</span>
+              </div>
+              <p class="mt-2 text-xs text-slate-500">Paruh waktu dan fleksibel, beberapa hari setiap bulan sesuai kebutuhan.</p>
+              <ul class="mt-5 space-y-3 text-sm leading-7 text-slate-600">
+                <li class="flex gap-3"><span class="mt-1 text-gold-600">✓</span><span>Mengelola pencatatan dan administrasi iuran wajib serta sumbangan sukarela warga.</span></li>
+                <li class="flex gap-3"><span class="mt-1 text-gold-600">✓</span><span>Melakukan penagihan, pengumpulan, dan perhitungan dana yang diterima.</span></li>
+                <li class="flex gap-3"><span class="mt-1 text-gold-600">✓</span><span>Menyetorkan dana kepada pihak terkait dan mengarsipkan bukti pembayaran serta kuitansi.</span></li>
+              </ul>
+            </div>
+          </article>
+          <article class="reveal relative pl-12 md:pl-16">
+            <span class="absolute left-2 top-6 z-10 h-6 w-6 rounded-full border-4 border-slate-50 bg-gold-500 md:left-3"></span>
+            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-soft sm:p-8">
+              <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h3 class="text-lg font-bold text-navy-950">Freelance Data Entry — WFH</h3>
+                  <p class="mt-1 font-semibold text-navy-700">Perusahaan swasta bidang logistik, transportasi laut, dan distribusi BBM</p>
+                </div>
+                <span class="w-fit rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-navy-800">Jul 2026 – Sekarang</span>
+              </div>
+              <ul class="mt-5 space-y-3 text-sm leading-7 text-slate-600">
+                <li class="flex gap-3"><span class="mt-1 text-gold-600">✓</span><span>Menginput dan memperbarui data menggunakan Google Spreadsheet.</span></li>
+                <li class="flex gap-3"><span class="mt-1 text-gold-600">✓</span><span>Menyusun data secara sistematis agar mudah diakses dan ditelusuri.</span></li>
+                <li class="flex gap-3"><span class="mt-1 text-gold-600">✓</span><span>Memverifikasi data untuk meminimalkan kesalahan input.</span></li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Organisasi dan kegiatan -->
+    <section id="activities" class="scroll-mt-24 py-20 md:py-24">
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="reveal max-w-2xl">
+          <p class="text-sm font-bold uppercase tracking-[.18em] text-gold-600">Organisasi &amp; Kegiatan</p>
+          <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-navy-950 sm:text-4xl">Keterlibatan dan kegiatan pendukung</h2>
+          <p class="mt-4 leading-7 text-slate-600">Pengalaman organisasi dan kepanitiaan berdasarkan CV, dengan tautan folder dokumentasi yang Anda berikan.</p>
+        </div>
+        <div class="mt-9 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <article class="reveal rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-xl text-navy-800" aria-hidden="true">◎</div>
+            <h3 class="mt-5 text-lg font-bold text-navy-950">BEM STIENAS Banjarmasin</h3>
+            <p class="mt-2 text-sm text-slate-600">Anggota · Februari 2023 – Oktober 2025</p>
+          </article>
+          <article class="reveal rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-xl text-amber-800" aria-hidden="true">◇</div>
+            <h3 class="mt-5 text-lg font-bold text-navy-950">Satgas PPKS</h3>
+            <p class="mt-2 text-sm text-slate-600">Anggota · Juli 2023 – Januari 2026</p>
+          </article>
+          <article class="reveal rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-100 text-xl text-emerald-800" aria-hidden="true">✓</div>
+            <h3 class="mt-5 text-lg font-bold text-navy-950">KPPS — Pemilu &amp; Pilkada</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">Mendukung proses pemungutan dan penghitungan suara serta membantu administrasi sesuai penugasan.</p>
+            <p class="mt-2 text-xs text-slate-500">Februari 2024 dan November 2024</p>
+          </article>
+        </div>
+        <div class="reveal mt-7 flex flex-col gap-4 rounded-2xl border border-dashed border-gold-500 bg-amber-50/70 p-5 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h3 class="font-bold text-navy-950">Dokumentasi organisasi dan kegiatan</h3>
+            <p class="mt-1 text-sm leading-6 text-slate-600">Buka folder Google Drive untuk melihat dokumen pendukung kegiatan dan organisasi.</p>
+          </div>
+          <a href="https://drive.google.com/drive/folders/1IUn10bs93uphq5A4AVi6p3VANghsu6k4" target="_blank" rel="noopener noreferrer" class="inline-flex shrink-0 items-center justify-center rounded-full border border-gold-500 px-5 py-3 text-sm font-bold text-navy-900 transition hover:bg-amber-100">Lihat Organisasi &amp; Kegiatan ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proyek -->
+    <section id="projects" class="scroll-mt-24 border-y border-slate-200 bg-white py-20 md:py-24">
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <p class="text-sm font-bold uppercase tracking-[.18em] text-gold-600">Projects &amp; Portfolio</p>
+          <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-navy-950 sm:text-4xl">Contoh penerapan keterampilan</h2>
+          <p class="mt-4 leading-7 text-slate-600">Kartu bertanda simulasi adalah contoh latihan yang dapat dikembangkan. Ganti dengan file atau hasil kerja milik Anda jika sudah siap ditampilkan.</p>
+        </div>
+        <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+          <article class="reveal group rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:shadow-soft">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-100 text-xl text-emerald-800" aria-hidden="true">▦</div>
+            <span class="mt-5 inline-flex rounded-full bg-amber-100 px-3 py-1 text-xs font-bold text-amber-900">SIMULASI</span>
+            <h3 class="mt-3 text-lg font-bold text-navy-950">Pengolahan Data Spreadsheet</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">Contoh latihan merapikan tabel, memeriksa data, menggunakan filter, dan menyusun rekap agar informasi mudah ditelusuri.</p>
+            <p class="mt-4 text-xs font-semibold text-slate-500">Google Spreadsheet / Excel</p>
+          </article>
+          <article class="reveal group rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:shadow-soft">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-xl font-bold text-navy-800" aria-hidden="true">W</div>
+            <span class="mt-5 inline-flex rounded-full bg-blue-100 px-3 py-1 text-xs font-bold text-navy-800">KETERAMPILAN</span>
+            <h3 class="mt-3 text-lg font-bold text-navy-950">Microsoft Office</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">Penggunaan Microsoft Word dan Excel untuk mendukung penyusunan dokumen, pengolahan data, serta kebutuhan administrasi.</p>
+            <p class="mt-4 text-xs font-semibold text-slate-500">Word · Excel · Dokumen administrasi</p>
+          </article>
+          <article class="reveal group rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:shadow-soft">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-violet-100 text-xl text-violet-800" aria-hidden="true">▤</div>
+            <span class="mt-5 inline-flex rounded-full bg-amber-100 px-3 py-1 text-xs font-bold text-amber-900">SIMULASI</span>
+            <h3 class="mt-3 text-lg font-bold text-navy-950">Latihan Accurate Basic</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">Ruang untuk menampilkan latihan pengenalan aplikasi Accurate. Jangan tampilkan data perusahaan atau klien yang bersifat rahasia.</p>
+            <p class="mt-4 text-xs font-semibold text-slate-500">Accurate — tingkat basic</p>
+          </article>
+          <article class="reveal group rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:shadow-soft">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-rose-100 text-xl text-rose-800" aria-hidden="true">%</div>
+            <span class="mt-5 inline-flex rounded-full bg-amber-100 px-3 py-1 text-xs font-bold text-amber-900">SIMULASI</span>
+            <h3 class="mt-3 text-lg font-bold text-navy-950">Studi Kasus Perpajakan</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">Tempat untuk contoh latihan perpajakan, misalnya identifikasi transaksi dan dokumen pendukung berdasarkan materi yang dipelajari.</p>
+            <p class="mt-4 text-xs font-semibold text-slate-500">Brevet Pajak A &amp; B / Coretax</p>
+          </article>
+          <article class="reveal group rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:shadow-soft">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-100 text-xl text-sky-800" aria-hidden="true">↗</div>
+            <span class="mt-5 inline-flex rounded-full bg-sky-100 px-3 py-1 text-xs font-bold text-sky-900">DOKUMEN</span>
+            <h3 class="mt-3 text-lg font-bold text-navy-950">Google Drive</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">Akses folder dokumen dan materi portofolio yang dibagikan melalui Google Drive.</p>
+            <a href="https://drive.google.com/drive/folders/1J1Ze0C_q9DejbgcJSq3rzeljwJVumPda" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center rounded-full bg-navy-900 px-4 py-2 text-xs font-bold text-white hover:bg-navy-800">Buka Google Drive ↗</a>
+          </article>
+        </div>
+        <p class="reveal mt-6 text-center text-xs leading-6 text-slate-500">Catatan: kartu di atas adalah ide proyek simulasi, bukan klaim bahwa proyek tersebut sudah selesai atau merupakan pekerjaan klien.</p>
+      </div>
+    </section>
+
+    <!-- Keahlian -->
+    <section id="skills" class="scroll-mt-24 py-20 md:py-24">
+      <div class="mx-auto grid max-w-7xl gap-10 px-5 md:px-8 lg:grid-cols-[.8fr_1.2fr] lg:gap-20">
+        <div class="reveal">
+          <p class="text-sm font-bold uppercase tracking-[.18em] text-gold-600">Skills</p>
+          <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-navy-950 sm:text-4xl">Keterampilan yang relevan</h2>
+          <p class="mt-4 leading-7 text-slate-600">Daftar ini disusun berdasarkan informasi yang tercantum pada CV. Tingkat kemampuan dapat dijelaskan lebih lanjut saat wawancara.</p>
+        </div>
+        <div class="reveal rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <h3 class="font-bold text-navy-900">Administrasi &amp; pengolahan data</h3>
+          <div class="mt-4 flex flex-wrap gap-2.5">
+            <span class="rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-navy-800">Google Spreadsheet</span>
+            <span class="rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-navy-800">Microsoft Office</span>
+            <span class="rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-navy-800">Input &amp; pembaruan data</span>
+            <span class="rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-navy-800">Verifikasi data</span>
+            <span class="rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-navy-800">Administrasi dokumen</span>
+          </div>
+          <h3 class="mt-8 font-bold text-navy-900">Finance, Accounting &amp; Tax</h3>
+          <div class="mt-4 flex flex-wrap gap-2.5">
+            <span class="rounded-full bg-amber-50 px-4 py-2 text-sm font-semibold text-amber-900">Dasar akuntansi</span>
+            <span class="rounded-full bg-amber-50 px-4 py-2 text-sm font-semibold text-amber-900">Pencatatan &amp; rekap pembayaran</span>
+            <span class="rounded-full bg-amber-50 px-4 py-2 text-sm font-semibold text-amber-900">Penagihan &amp; administrasi keuangan</span>
+            <span class="rounded-full bg-amber-50 px-4 py-2 text-sm font-semibold text-amber-900">Brevet Pajak A dan B</span>
+            <span class="rounded-full bg-amber-50 px-4 py-2 text-sm font-semibold text-amber-900">Accurate — basic</span>
+            <span class="rounded-full bg-amber-50 px-4 py-2 text-sm font-semibold text-amber-900">Coretax / E-Faktur (tercantum di CV)</span>
+          </div>
+          <p class="mt-5 text-xs leading-6 text-slate-500">Catatan: halaman ini tidak menyatakan tingkat mahir untuk aplikasi atau kompetensi yang belum dikonfirmasi.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sertifikasi -->
+    <section id="certifications" class="scroll-mt-24 border-y border-slate-200 bg-white py-20 md:py-24">
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="reveal max-w-2xl">
+          <p class="text-sm font-bold uppercase tracking-[.18em] text-gold-600">Sertifikasi &amp; Pelatihan</p>
+          <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-navy-950 sm:text-4xl">Dokumen pendukung kompetensi</h2>
+          <p class="mt-4 leading-7 text-slate-600">Folder Google Drive berikut memuat dokumen sertifikasi dan pelatihan. Pastikan akses folder diatur agar perekrut dapat melihat dokumen.</p>
+        </div>
+        <div class="mt-9 grid gap-5 md:grid-cols-3">
+          <article class="reveal rounded-3xl border border-slate-200 bg-slate-50 p-6">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-2xl text-amber-800" aria-hidden="true">✦</div>
+            <h3 class="mt-5 text-lg font-bold text-navy-950">Brevet Pajak A dan B</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">Tercantum pada CV. Lengkapi nama lembaga penerbit dan tahun sesuai sertifikat.</p>
+            <p class="mt-4 text-xs font-medium text-slate-500">Lembaga: <span class="font-bold">[isi sesuai sertifikat]</span></p>
+            <p class="mt-1 text-xs font-medium text-slate-500">Tahun: <span class="font-bold">[isi tahun]</span></p>
+          </article>
+          <article class="reveal rounded-3xl border border-slate-200 bg-slate-50 p-6">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-2xl text-navy-800" aria-hidden="true">▤</div>
+            <h3 class="mt-5 text-lg font-bold text-navy-950">CFTR — Certified Fundamental Tax Reporting</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">Sertifikasi Certified Fundamental Tax Reporting (CFTR), diselenggarakan secara virtual oleh Binspira Institute sesuai informasi yang Anda berikan.</p>
+            <p class="mt-4 text-xs font-medium text-slate-500">Lembaga: <span class="font-bold">[isi sesuai sertifikat]</span></p>
+            <p class="mt-1 text-xs font-medium text-slate-500">Tahun: <span class="font-bold">[isi tahun]</span></p>
+          </article>
+          <article class="reveal rounded-3xl border border-slate-200 bg-slate-50 p-6">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-100 text-2xl text-emerald-800" aria-hidden="true">%</div>
+            <h3 class="mt-5 text-lg font-bold text-navy-950">Accurate Accounting — Basic</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">Pelatihan Accurate tingkat basic. Tambahkan detail lembaga dan tahun berdasarkan dokumen yang tersedia.</p>
+            <p class="mt-4 text-xs font-medium text-slate-500">Lembaga: <span class="font-bold">[isi jika ada]</span></p>
+            <p class="mt-1 text-xs font-medium text-slate-500">Tahun: <span class="font-bold">[isi jika ada]</span></p>
+          </article>
+        </div>
+        <div class="reveal mt-7 rounded-2xl border border-dashed border-gold-500 bg-amber-50/70 p-5 sm:flex sm:items-center sm:justify-between">
+          <div>
+            <h3 class="font-bold text-navy-950">Folder sertifikat Google Drive</h3>
+            <p class="mt-1 text-sm leading-6 text-slate-600">Folder berisi dokumen sertifikasi dan pelatihan yang dapat ditinjau oleh perekrut.</p>
+          </div>
+          <a id="cert-drive-link" href="https://drive.google.com/drive/folders/1E8ewR1vJoOeiFTDD0j0Art6grGBEiPBO" class="mt-4 inline-flex shrink-0 items-center justify-center rounded-full border border-gold-500 px-5 py-3 text-sm font-bold text-navy-900 transition hover:bg-amber-100 sm:ml-5 sm:mt-0" target="_blank" rel="noopener noreferrer">Lihat Sertifikat ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="contact" class="scroll-mt-24 relative overflow-hidden bg-navy-950 py-20 text-white md:py-24">
+      <div class="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-blue-700/30 blur-3xl"></div>
+      <div class="relative mx-auto grid max-w-7xl gap-12 px-5 md:px-8 lg:grid-cols-[1fr_.8fr] lg:gap-20">
+        <div class="reveal">
+          <p class="text-sm font-bold uppercase tracking-[.18em] text-gold-400">Contact</p>
+          <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Mari terhubung.</h2>
+          <p class="mt-5 max-w-xl leading-8 text-blue-100/80">Saya terbuka untuk kesempatan kerja di bidang Finance, Accounting, dan Tax, serta kesempatan untuk terus belajar dan berkembang secara profesional.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="mailto:salmadwiyanti321@gmail.com" class="inline-flex items-center justify-center rounded-full bg-gold-400 px-6 py-3.5 text-sm font-extrabold text-navy-950 transition hover:bg-gold-500">Kirim Email ↗</a>
+            <a href="https://wa.me/6285705514620" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-white/10">WhatsApp ↗</a>
+          </div>
+        </div>
+        <div class="reveal rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur sm:p-8">
+          <h3 class="text-lg font-bold">Informasi kontak</h3>
+          <div class="mt-6 space-y-5">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wider text-blue-200/70">Email</p>
+              <a href="mailto:salmadwiyanti321@gmail.com" class="mt-1 inline-block break-all font-medium hover:text-gold-400">salmadwiyanti321@gmail.com</a>
+            </div>
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wider text-blue-200/70">WhatsApp / Telepon</p>
+              <a href="https://wa.me/6285705514620" target="_blank" rel="noopener noreferrer" class="mt-1 inline-block font-medium hover:text-gold-400">0857-0551-4620</a>
+            </div>
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wider text-blue-200/70">LinkedIn</p>
+              <a href="https://www.linkedin.com/in/SalmaDwiYanti12" target="_blank" rel="noopener noreferrer" class="mt-1 inline-block break-all font-medium hover:text-gold-400">linkedin.com/in/SalmaDwiYanti12 ↗</a>
+            </div>
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wider text-blue-200/70">Instagram</p>
+              <a href="https://www.instagram.com/sdysal/" target="_blank" rel="noopener noreferrer" class="mt-1 inline-block font-medium hover:text-gold-400">@sdysal ↗</a>
+            </div>
+          </div>
+          <p class="mt-7 border-t border-white/10 pt-5 text-xs leading-6 text-blue-100/60">Alamat rumah tidak ditampilkan untuk menjaga privasi. Hubungi saya melalui email, WhatsApp, LinkedIn, atau Instagram.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#071126] px-5 py-6 text-center text-xs text-blue-100/60">
+    <p>© <span id="year"></span> Salma Dwi Yanti, S.Ak. Dibuat untuk kebutuhan portofolio profesional.</p>
+  </footer>
+
+  <script>
+    // Menu mobile: buka/tutup navigasi dan tutup setelah memilih bagian.
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = !navLinks.classList.contains('hidden');
+      navLinks.classList.toggle('hidden', isOpen);
+      navLinks.classList.toggle('flex', !isOpen);
+      menuToggle.setAttribute('aria-expanded', String(!isOpen));
+    });
+    document.querySelectorAll('.nav-link, #nav-links a[href="#contact"]').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 768) {
+          navLinks.classList.add('hidden');
+          navLinks.classList.remove('flex');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    // Animasi masuk saat elemen terlihat; konten tetap terlihat jika fitur tidak tersedia.
+    const revealItems = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealItems.forEach(item => observer.observe(item));
+    } else {
+      revealItems.forEach(item => item.classList.add('is-visible'));
+    }
+
+    // Tahun footer otomatis.
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Tautan Google Drive sertifikat sudah dipasang langsung pada tombol di bagian Sertifikasi.
+  </script>
 </body>
 </html>
